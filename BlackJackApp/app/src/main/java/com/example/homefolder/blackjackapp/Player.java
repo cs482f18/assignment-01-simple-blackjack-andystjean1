@@ -72,12 +72,18 @@ public class Player {
      * @return
      *      the number of points in the players hand
      */
-    public int sumHand(){
+    protected int sumHand(){
         int total = 0;
+        boolean has_ace = false;
 
         for(Card c: hand) {
             total += c.value();
+            if(c.toString().charAt(0) == 'a')
+                has_ace = true;
         }
+
+        if(total > 21 && has_ace)
+            total-=10;
 
         //add logic for ace to be 1 or 11
 

@@ -29,5 +29,16 @@ public class Dealer extends Player {
         this.next = p;
     }
 
+    /**
+     * checks if the dealer wants another card
+     *
+     * @return returns true if the dealers score is below 17, else returns true
+     */
+    public boolean wantCard() {
+        if(this.sumHand() >= 17)
+            return false;
+
+        return true;
+    }
 
 }

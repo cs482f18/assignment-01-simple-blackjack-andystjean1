@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">BlackJackApp</string>
     <string name="title_activity_game">GameActivity</string>
+    <string name="win_message">YOU WON!</string>
+    <string name="lose_message">YOU LOST</string>
+    <string name="tie_message">It\'s a push</string>
+    <string name="got_blackjack">YOU GOT BLACKJACK!</string>
+
+
 </resources>

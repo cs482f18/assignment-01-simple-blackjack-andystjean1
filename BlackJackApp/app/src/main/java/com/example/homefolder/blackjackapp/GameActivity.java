@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -45,6 +46,13 @@ public class GameActivity extends AppCompatActivity {
         userHand.add((ImageView) findViewById(R.id.userCard4));
         userHand.add((ImageView) findViewById(R.id.userCard5));
 
+        final TextView dealerScoreValue = (TextView) findViewById(R.id.dealerScoreValue);
+        final TextView userScoreValue = (TextView) findViewById(R.id.userScoreValue);
+        final TextView outcomeTextView = (TextView) findViewById(R.id.outcomeTextView);
+
+
+
+
         // set to transparent
         for(ImageView v: dealerHand) {
             v.setAlpha(0f);
@@ -59,6 +67,14 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                //reset outcome to empty string
+                outcomeTextView.setText(" ");
+
+                //reset score values
+                dealerScoreValue.setText("0");
+                userScoreValue.setText("0");
+
+                //reset card views
                 for(ImageView c: dealerHand) {
                     c.setAlpha(0f);
                 }
@@ -86,16 +102,20 @@ public class GameActivity extends AppCompatActivity {
 
                 dealerHand.get(1).setImageResource(R.drawable.red_back);
 
+                if(user.sumHand() == 21) {
+                    outcomeTextView.setText(R.string.got_blackjack);
+                }
+
                 user.hitCount = 0;
                 index = 2;
+
+                userScoreValue.setText(String.valueOf(user.sumHand()));
             }
         });
 
         //Hit button
         Button hitBtn = (Button) findViewById(R.id.hitBtn);
         hitBtn.setOnClickListener(new View.OnClickListener() {
-
-
             @Override
             public void onClick(View v) {
 
@@ -106,8 +126,19 @@ public class GameActivity extends AppCompatActivity {
                     userHand.get(index).setAlpha(1f);
                     index++;
                     user.hitCount++;
-
+                    userScoreValue.setText(String.valueOf(user.sumHand()));
                 }
+
+                if(user.sumHand() == 21){
+                    outcomeTextView.setText(R.string.got_blackjack);
+                }
+
+                if(user.sumHand() > 21) {
+                    outcomeTextView.setText(R.string.lose_message);
+                }
+
+
+
             }
         });
 
@@ -116,10 +147,34 @@ public class GameActivity extends AppCompatActivity {
         stayBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                index = 2;
+
                 String dealerCard = dealer.hand.get(1).toString();
                 dealerHand.get(1).setImageResource(getResources().getIdentifier(dealerCard, "drawable", getPackageName()));
 
+                dealerScoreValue.setText(String.valueOf(dealer.sumHand()));
 
+                while(dealer.wantCard()) {
+                    dealer.hit(deck);
+                    dealerCard = dealer.hand.get(index).toString();
+                    dealerHand.get(index).setImageResource(getResources().getIdentifier(dealerCard, "drawable", getPackageName()));
+                    dealerHand.get(index).setAlpha(1f);
+                    index++;
+                    dealerScoreValue.setText(String.valueOf(dealer.sumHand()));
+
+                }
+
+                if(user.sumHand() > dealer.sumHand()) {
+                    outcomeTextView.setText(R.string.win_message);
+                }
+
+                if(user.sumHand() < dealer.sumHand() && dealer.sumHand() <= 21) {
+                    outcomeTextView.setText(R.string.lose_message);
+                }
+
+                if(user.sumHand() == dealer.sumHand()) {
+                    outcomeTextView.setText(R.string.tie_message);
+                }
             }
         });
     }

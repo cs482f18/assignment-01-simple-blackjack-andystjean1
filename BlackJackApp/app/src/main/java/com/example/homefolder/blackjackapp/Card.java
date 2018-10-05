@@ -56,8 +56,13 @@ public class Card {
      *      the value of the card according to the scoring rules of black jack
      */
     public int value() {
+        //face value cards
         if(this.rank >= 9)
             return 10;
+        //the ace
+        else if(this.rank == 0)
+            return 11;
+        //other cards
         else
             return this.rank + 1;
     }
