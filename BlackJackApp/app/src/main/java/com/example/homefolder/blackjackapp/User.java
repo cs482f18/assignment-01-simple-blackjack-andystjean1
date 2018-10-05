@@ -11,7 +11,7 @@ public class User extends Player {
     /**
      * the number of times the user has hit in a turn (Max: 3)
      */
-    private int hitCount;
+    public int hitCount;
 
     /**
      *  Creates a new User
@@ -22,4 +22,6 @@ public class User extends Player {
         super(p);
         hitCount = 0;
     }
+
+
 }

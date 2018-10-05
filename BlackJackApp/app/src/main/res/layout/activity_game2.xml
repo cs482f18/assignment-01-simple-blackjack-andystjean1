@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameActivity">
+
+
+    <ImageView
+        android:id="@+id/deckView"
+        android:layout_width="65dp"
+        android:layout_height="135dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/userCard1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dealerCard2"
+        app:srcCompat="@drawable/red_back" />
+
+    <Button
+        android:id="@+id/newGameBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="8dp"
+        android:text="New Game"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userCard1"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/hitBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="8dp"
+        android:text="Hit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/newGameBtn"
+        app:layout_constraintTop_toBottomOf="@+id/userCard3" />
+
+    <Button
+        android:id="@+id/stayBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Stay"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/hitBtn"
+        app:layout_constraintTop_toBottomOf="@+id/userCard5"
+        app:layout_constraintVertical_bias="0.375" />
+
+    <!-- Dealer Cards-->
+    <ImageView
+        android:id="@+id/dealerCard1"
+        android:layout_width="70dp"
+        android:layout_height="98dp"
+
+        android:layout_marginLeft="4dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toEndOf="@+id/dealerCard2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/threec" />
+
+    <ImageView
+        android:id="@+id/dealerCard2"
+        android:layout_width="73dp"
+        android:layout_height="98dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/threec" />
+
+    <ImageView
+        android:id="@+id/dealerCard3"
+        android:layout_width="70dp"
+        android:layout_height="98dp"
+
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toEndOf="@+id/dealerCard1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/threec" />
+
+    <ImageView
+        android:id="@+id/dealerCard4"
+        android:layout_width="70dp"
+        android:layout_height="98dp"
+
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toEndOf="@+id/dealerCard3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/threec" />
+
+    <ImageView
+    android:id="@+id/dealerCard5"
+    android:layout_width="70dp"
+    android:layout_height="98dp"
+
+    android:layout_marginTop="32dp"
+    app:layout_constraintStart_toEndOf="@+id/dealerCard4"
+    app:layout_constraintTop_toTopOf="parent"
+    app:srcCompat="@drawable/threec" />
+
+    <!-- User Cards -->
+    <ImageView
+        android:id="@+id/userCard1"
+        android:layout_width="70dp"
+        android:layout_height="98dp"
+        android:layout_marginBottom="72dp"
+        android:layout_marginLeft="16dp"
+
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/fourh" />
+
+    <ImageView
+        android:id="@+id/userCard2"
+        android:layout_width="70dp"
+        android:layout_height="98dp"
+        android:layout_marginBottom="72dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/userCard1"
+        app:srcCompat="@drawable/fourh" />
+
+    <ImageView
+        android:id="@+id/userCard3"
+        android:layout_width="70dp"
+        android:layout_height="98dp"
+        android:layout_marginBottom="72dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/userCard2"
+        app:srcCompat="@drawable/fourh" />
+
+    <ImageView
+        android:id="@+id/userCard4"
+        android:layout_width="70dp"
+        android:layout_height="98dp"
+        android:layout_marginBottom="72dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/userCard3"
+        app:srcCompat="@drawable/fourh" />
+
+    <ImageView
+        android:id="@+id/userCard5"
+        android:layout_width="70dp"
+        android:layout_height="98dp"
+        android:layout_marginBottom="72dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/userCard4"
+        app:srcCompat="@drawable/fourh" />
+
+    <TextView
+        android:id="@+id/dealerScoreLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Dealer Score: "
+        app:layout_constraintEnd_toStartOf="@+id/dealerScoreValue"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dealerCard4" />
+
+    <TextView
+        android:id="@+id/dealerScoreValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dealerCard5" />
+
+    <TextView
+        android:id="@+id/userScoreLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:text="Your Score: "
+        app:layout_constraintBottom_toTopOf="@+id/userCard4"
+        app:layout_constraintEnd_toStartOf="@+id/userScoreValue"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/userScoreValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/userCard5"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

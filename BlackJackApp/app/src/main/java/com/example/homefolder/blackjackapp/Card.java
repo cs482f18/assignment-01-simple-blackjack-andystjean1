@@ -23,12 +23,12 @@ public class Card {
      * values of suits for printing
      */
 
-    private String[] suits = {"Spades", "Hearts", "Diamonds", "Clubs"};
+    private String[] suits = {"s", "h", "d", "c"};
 
     /**
      * values of ranks for printing
      */
-    private String[] ranks = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
+    private String[] ranks = {"a", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "j", "q", "k"};
 
     /**
      *  Creates a card with given suit and rank
@@ -44,11 +44,9 @@ public class Card {
         this.suit = suit;
     }
 
-    /**
-     *  prints the card in 'rank of suit' format
-     */
-    public void display() {
-        System.out.println(ranks[this.rank] + " of " + suits[this.suit]);
+    @Override
+    public String toString(){
+        return ranks[this.rank] + suits[this.suit];
     }
 
     /**

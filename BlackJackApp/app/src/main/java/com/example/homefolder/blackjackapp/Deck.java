@@ -52,7 +52,7 @@ public class Deck {
      */
     public void dump() {
         for(Card c: cards) {
-            c.display();
+            c.toString();
         }
     }
 

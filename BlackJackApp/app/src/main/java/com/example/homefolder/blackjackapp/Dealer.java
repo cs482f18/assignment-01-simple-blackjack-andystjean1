@@ -21,4 +21,13 @@ public class Dealer extends Player {
     }
 
 
+    /**
+     * Sets the player nex to the dealer
+     * @param p the player next to the dealer
+     */
+    public void setNext(Player p) {
+        this.next = p;
+    }
+
+
 }

@@ -1,5 +1,6 @@
 package com.example.homefolder.blackjackapp;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 /**
@@ -14,12 +15,12 @@ public class Player {
     /**
      * the players hand
      */
-    private LinkedList<Card> hand;
+    protected ArrayList<Card> hand;
 
     /**
      * the player whose turn is next
      */
-    private Player next;
+    protected Player next;
 
     /**
      * creates a new player
@@ -28,14 +29,14 @@ public class Player {
      *       the player to be set as next
      */
     public Player(Player p) {
-        hand = new LinkedList<>();
+        hand = new ArrayList<>();
         next = p;
     }
 
     /**
      * the score of the player's hand
      */
-    private int score;
+    protected int score;
 
     /**
      * Deals another card to the player
@@ -61,7 +62,7 @@ public class Player {
      */
     public void dumpHand(){
         for(Card c: hand) {
-            c.display();
+            c.toString();
         }
     }
 
