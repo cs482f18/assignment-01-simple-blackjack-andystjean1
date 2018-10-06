@@ -50,9 +50,6 @@ public class GameActivity extends AppCompatActivity {
         final TextView userScoreValue = (TextView) findViewById(R.id.userScoreValue);
         final TextView outcomeTextView = (TextView) findViewById(R.id.outcomeTextView);
 
-
-
-
         // set to transparent
         for(ImageView v: dealerHand) {
             v.setAlpha(0f);
