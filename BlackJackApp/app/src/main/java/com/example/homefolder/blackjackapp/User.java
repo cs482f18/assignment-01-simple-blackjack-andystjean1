@@ -15,11 +15,9 @@ public class User extends Player {
 
     /**
      *  Creates a new User
-     * @param p
-     *      The player next to the user
      */
-    public User(Player p) {
-        super(p);
+    public User() {
+        super();
         hitCount = 0;
     }
 

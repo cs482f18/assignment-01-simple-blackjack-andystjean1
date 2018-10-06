@@ -18,19 +18,12 @@ public class Player {
     protected ArrayList<Card> hand;
 
     /**
-     * the player whose turn is next
-     */
-    protected Player next;
-
-    /**
      * creates a new player
      *
-     * @param p
-     *       the player to be set as next
      */
-    public Player(Player p) {
+    public Player() {
         hand = new ArrayList<>();
-        next = p;
+
     }
 
     /**
@@ -50,14 +43,6 @@ public class Player {
     }
 
     /**
-     * @return the player whose turn is next
-     */
-    public Player stay() {
-        return this.next;
-    }
-
-
-    /**
      *  prints out the hand for debugging
      */
     public void dumpHand(){
@@ -65,7 +50,6 @@ public class Player {
             c.toString();
         }
     }
-
 
     /**
      *  Calculates the total number of points in a players hand
@@ -84,8 +68,6 @@ public class Player {
 
         if(total > 21 && has_ace)
             total-=10;
-
-        //add logic for ace to be 1 or 11
 
         return total;
     }

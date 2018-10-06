@@ -21,9 +21,9 @@ public class GameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game2);
 
         //create the user and dealer and set them next to each other
-        final Dealer dealer = new Dealer(null);
-        final User user = new User(dealer);
-        dealer.setNext(user);
+        final Dealer dealer = new Dealer();
+        final User user = new User();
+
 
         //create the deck
         final Deck deck = new Deck();
@@ -164,7 +164,7 @@ public class GameActivity extends AppCompatActivity {
 
                 }
 
-                if(user.sumHand() > dealer.sumHand()) {
+                if(user.sumHand() > dealer.sumHand() || dealer.sumHand() > 21) {
                     outcomeTextView.setText(R.string.win_message);
                 }
 
