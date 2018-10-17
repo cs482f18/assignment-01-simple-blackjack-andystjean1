@@ -22,8 +22,7 @@ public class Card {
     /**
      * values of suits for printing
      */
-
-    private String[] suits = {"s", "h", "d", "c"};
+    private String[] suits = {"s", "h", "d", "c"}; // you should also look into using java enum for these
 
     /**
      * values of ranks for printing
